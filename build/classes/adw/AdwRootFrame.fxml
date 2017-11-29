@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="471.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="adw.AdwRootFrameController">
+    <tabs>
+        <Tab fx:id="tabClientes" text="Clientes">
+            <content>
+                <AnchorPane fx:id="paneClientes" minHeight="0.0" minWidth="0.0" prefHeight="266.0" prefWidth="480.0">
+                   <children>                       
+                        <Label fx:id="lblNome" layoutX="26.0" layoutY="6.0" text="Nome" />
+                        <TextField fx:id="fieldNome" layoutX="144.0" layoutY="6.0" prefHeight="0.0" prefWidth="171.0" />
+                        <Label fx:id="lblCPF" layoutX="28.0" layoutY="51.0" text="CPF" />
+                        <TextField fx:id="fieldCPF" layoutX="144.0" layoutY="46.0" />
+                        <Label fx:id="lblTelefone" layoutX="28.0" layoutY="98.0" text="Telefone" />
+                        <TextField fx:id="fieldTelefone" layoutX="144.0" layoutY="93.0" />
+                        <Label fx:id="lblEmail" layoutX="28.0" layoutY="145.0" text="E-mail" />
+                        <TextField fx:id="fieldEmail" layoutX="144.0" layoutY="140.0" />
+                        <Button fx:id="btnCadastrar" layoutX="144.0" layoutY="189.0" mnemonicParsing="false" onAction="#cadastrarCliente" prefHeight="26.0" prefWidth="174.0" text="Cadastrar Cliente" />
+                        <TableView fx:id="tvConsultaClientes" editable="true" layoutX="9.0" layoutY="232.0" prefHeight="224.0" prefWidth="451.0">
+                            <columns>
+                                <TableColumn fx:id="tcCPF" prefWidth="70.0" text="CPF" />
+                                <TableColumn fx:id="tcNome" minWidth="0.0" prefWidth="70.0" text="Nome" />
+                                <TableColumn fx:id="tcTelefone" minWidth="0.0" prefWidth="70.0" text="Telefone" />
+                                <TableColumn fx:id="tcEmail" minWidth="0.0" prefWidth="70.0" text="Email" />
+                            </columns>
+                        </TableView>                        
+                        <Button id="btAtualizar" fx:id="btnAtualizar" layoutX="36.0" layoutY="495.0" mnemonicParsing="false" onAction="#atualizarClientes" prefHeight="25.0" prefWidth="97.0" text="Atualizar" />
+                        <Button fx:id="btnApagarCliente" layoutX="226.0" layoutY="495.0" mnemonicParsing="false" onAction="#excluirCliente" text="Apagar Cliente Selecionado" />
+                   </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="tabProjetos" text="Projetos">
+            <content>
+                <AnchorPane fx:id="paneProjetos" minHeight="0.0" minWidth="0.0" prefHeight="596.0" prefWidth="471.0">
+                   <children>
+                        <Label fx:id="lblNomeProjeto" layoutX="26.0" layoutY="6.0" text="Nome" />
+                        <TextField fx:id="fieldNomeProjeto" layoutX="144.0" layoutY="6.0" prefHeight="0.0" prefWidth="171.0" />
+                        <Label fx:id="lblDescProjeto" layoutX="28.0" layoutY="51.0" text="Descrição" />
+                        <TextField fx:id="fieldDescProjeto" layoutX="144.0" layoutY="46.0" />
+                        <Label fx:id="lblCPFClienteProjeto" layoutX="28.0" layoutY="98.0" text="CPF do Cliente" />
+                        <TextField fx:id="fieldCPFClienteProjeto" layoutX="144.0" layoutY="93.0" />
+                        <Label fx:id="lblDTInicio" layoutX="26.0" layoutY="147.0" text="Data Inicio" />
+                        <DatePicker fx:id="fieldDTInicio" layoutX="144.0" layoutY="142.0" />
+                        <Label fx:id="lblDTFim" layoutX="26.0" layoutY="197.0" text="Data Fim" />
+                        <DatePicker fx:id="fieldDTFim" layoutX="144.0" layoutY="192.0" />
+                        <Button fx:id="btnCadastrarProjeto" layoutX="143.0" layoutY="240.0" mnemonicParsing="false" onAction="#cadastrarProjeto" prefHeight="26.0" prefWidth="174.0" text="Cadastrar Projeto" />
+                       <TableView fx:id="tvConsultaProjetos" editable="true" layoutX="10.0" layoutY="282.0" prefHeight="197.0" prefWidth="458.0">
+                            <columns>
+                                <TableColumn fx:id="tcTituloProjeto" prefWidth="90.0" text="Titulo" />
+                                <TableColumn fx:id="tcDescricaoProjeto" minWidth="0.0" prefWidth="81.0" text="Descrição" />
+                                <TableColumn fx:id="tcCPFProjeto" minWidth="0.0" prefWidth="60.0" text="CPF" />
+                                <TableColumn fx:id="tcInicioProjeto" minWidth="0.0" prefWidth="130.0" text="Início" />
+                                <TableColumn fx:id="tcFimProjeto" minWidth="0.0" prefWidth="92.0" text="Conclusão" />
+                            </columns>
+                        </TableView>
+                  <Button fx:id="btnAtualizarProjetos" layoutX="53.0" layoutY="505.0" mnemonicParsing="false" onAction="#atualizarProjetos" text="Atualizar" />
+                  <Button fx:id="btnDeletarProjeto" layoutX="13.0" layoutY="554.0" mnemonicParsing="false" onAction="#excluirProjeto" text="Deletar Projeto" />
+                   </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="tabDepartamentos" text="Departamentos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tvConsultaDepartamentos" layoutX="7.0" layoutY="232.0" prefHeight="200.0" prefWidth="454.0">
+                    <columns>
+                      <TableColumn fx:id="tcDepartamento" prefWidth="130.0" text="Departamento" />
+                      <TableColumn fx:id="tcDescricao" prefWidth="155.0" text="Descrição" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="lblNomeDepto" layoutX="11.0" layoutY="42.0" text="Nome do Departamento" />
+                  <TextField fx:id="fieldNomeDepto" layoutX="212.0" layoutY="37.0" />
+                  <Label fx:id="lblDescricaoDepto" layoutX="14.0" layoutY="105.0" text="Descrição" />
+                  <TextField fx:id="fieldDescricaoDepto" layoutX="212.0" layoutY="100.0" />
+                  <Button fx:id="btnCadastrarDepartamento" layoutX="122.0" layoutY="185.0" mnemonicParsing="false" onAction="#cadastrarDepartamento" text="Cadastrar Departamento" />
+                  <Button fx:id="btnDeletarDepartamento" layoutX="16.0" layoutY="501.0" mnemonicParsing="false" onAction="#excluirDepto" text="Deletar Departamento" />
+                  <Button fx:id="btnAtualizarDepartamentos" layoutX="15.0" layoutY="465.0" mnemonicParsing="false" onAction="#atualizarDepartamentos" text="Atualizar Departamentos" />
+               </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab fx:id="tabFuncionarios" text="Funcionários">
+            <content>
+                <AnchorPane fx:id="paneFuncionarios" minHeight="0.0" minWidth="0.0" prefHeight="266.0" prefWidth="480.0">
+                   <children>
+                       <AnchorPane layoutX="-4.0" layoutY="-8.0" minHeight="0.0" minWidth="0.0" prefHeight="261.0" prefWidth="480.0">
+                     <children>
+                        <Label fx:id="lblNomeFuncionario" layoutX="12.0" layoutY="41.0" text="Nome do Funcionário" />
+                        <TextField fx:id="fieldNomeFuncionario" layoutX="176.0" layoutY="36.0" />
+                        <Label fx:id="lblCPFFuncionario" layoutX="14.0" layoutY="87.0" text="CPF" />
+                        <TextField fx:id="fieldCPFFuncionario" layoutX="176.0" layoutY="82.0" />
+                        <Label fx:id="lblIDDepto" layoutX="14.0" layoutY="133.0" text="Código Depto." />
+                        <TextField fx:id="fieldIDDepto" layoutX="176.0" layoutY="128.0" />
+                        <Button fx:id="btnCadastrarFuncionario" layoutX="176.0" layoutY="192.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" text="Cadastrar Funcionário" />
+                     </children></AnchorPane>
+                          <TableView fx:id="tvConsultaFuncionarios" editable="true" layoutX="7.0" layoutY="280.0" prefHeight="197.0" prefWidth="458.0">
+                              <columns>
+                                  <TableColumn fx:id="tcNomeFuncionario" prefWidth="90.0" text="Nome" />
+                                  <TableColumn fx:id="tcCPFFuncionario" minWidth="0.0" prefWidth="70.0" text="CPF" />
+                                  <TableColumn fx:id="tcIDDepto" minWidth="0.0" prefWidth="70.0" text="Departamento" />
+                              </columns>
+                          </TableView>
+                  <Button fx:id="btnDeletarFuncionario" layoutX="40.0" layoutY="506.0" mnemonicParsing="false" onAction="#excluirFuncionario" text="Deletar Funcionário" />
+                  <Button fx:id="btnAtualizarFuncionarios" layoutX="40.0" layoutY="557.0" mnemonicParsing="false" onAction="#atualizarFuncionarios" text="Atualizar" />
+                   </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+      
+    </tabs>
+</TabPane>
